@@ -61,8 +61,10 @@ module.exports = function (grunt) {
                 }
             },
             allinone: {
-                src: 'dist/rasterizeHTML.js',
-                dest: 'build/rasterizeHTML.allinone.js',
+                files: {
+                    'dist/rasterizeHTML.allinone.js': ['dist/rasterizeHTML.js'],
+                    'build/rasterizeHTML.allinone.js': ['dist/rasterizeHTML.js']
+                },
                 options: {
                     browserifyOptions: {
                         standalone: 'rasterizeHTML'
@@ -142,7 +144,7 @@ module.exports = function (grunt) {
                         ' * inlineresources (MIT License) */\n'
                 },
                 files: {
-                    'dist/rasterizeHTML.allinone.js': ['build/rasterizeHTML.allinone.js']
+                    'dist/rasterizeHTML.allinone.min.js': ['build/rasterizeHTML.allinone.js']
                 }
             }
         },
